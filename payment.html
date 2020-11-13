@@ -1,0 +1,280 @@
+
+<!DOCTYPE HTML>
+<head>
+	<title>Book store</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all"/>
+	<link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
+
+	<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script> 
+	<script type="text/javascript" src="js/move-top.js"></script>
+	<script type="text/javascript" src="js/easing.js"></script>
+	<script src="js/easyResponsiveTabs.js" type="text/javascript"></script>
+	<link href="css/easy-responsive-tabs.css" rel="stylesheet" type="text/css" media="all"/>
+	<link rel="stylesheet" href="css/global.css">
+	<script src="js/slides.min.jquery.js"></script>
+	<script>
+		$(function(){
+			$('#products').slides({
+				preload: true,
+				preloadImage: 'img/loading.gif',
+				effect: 'slide, fade',
+				crossfade: true,
+				slideSpeed: 350,
+				fadeSpeed: 500,
+				generateNextPrev: true,
+				generatePagination: false
+			});
+		});
+	</script>
+</head>
+<body>
+	<div class="wrap">
+		<div class="header">
+			<div class="headertop_desc">
+				<div class="call">
+					<p><span>Need help?</span> call us <span class="number">1-22-3456789</span></span></p>
+				</div>
+				<div class="account_desc">
+					<ul>
+						<li><a href="#">Đăng ký</a></li>
+						<li><a href="#">Đăng nhập</a></li>
+
+					</ul>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="header_top">
+				<div class="logo">
+					<a href="index.html"><img src="image/book.jpg" style="width: 217px;height: 111px;" alt="" /></a>
+				</div>
+				<div class="cart">
+					<p>Chào mừng bạn đến với Book Store <span>Giỏ hàng:</span><div id="dd" class="wrapper-dropdown-2"> 0 sản phẩm
+						<ul class="dropdown">
+							<li></li>
+						</ul></div></p>
+					</div>
+					<script type="text/javascript">
+						function DropDown(el) {
+							this.dd = el;
+							this.initEvents();
+						}
+						DropDown.prototype = {
+							initEvents : function() {
+								var obj = this;
+
+								obj.dd.on('click', function(event){
+									$(this).toggleClass('active');
+									event.stopPropagation();
+								});	
+							}
+						}
+
+						$(function() {
+
+							var dd = new DropDown( $('#dd') );
+
+							$(document).click(function() {
+					// all dropdowns
+					$('.wrapper-dropdown-2').removeClass('active');
+				});
+
+						});
+
+					</script>
+					<div class="clear"></div>
+				</div>
+				<div class="header_bottom">
+					<div class="menu">
+						<ul>
+							<li><a href="index.html">Trang chủ</a></li>
+							<li><a href="about.html">Giới thiệu</a></li>
+							<li><a href="delivery.html">Tin tức</a></li>
+							<li><a href="news.html">Sản phẩm</a></li>
+							<li><a href="contact.html">Liên hệ</a></li>
+							<div class="clear"></div>
+						</ul>
+					</div>
+					<div class="search_box">
+						<form>
+							<input type="text" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}"><input type="submit" value="">
+						</form>
+					</div>
+					<div class="clear"></div>
+				</div>	     	
+			</div>
+			<div class="main">
+
+				<div class="content">
+
+					<div class="section group">
+						<div class="col-md-7">
+							<table class="table table-hover">
+								<thead>
+									<tr>
+										<td>Mã SP</td>
+										<td>Tên SP</td>
+										<td>Ảnh SP</td>
+										<td>Số lượng</td>
+										<td>Đơn giá</td>
+										<td>Thành tiền</td>
+										<td></td>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>111</td>
+										<td>Đường đến thành công</td>
+										<td><img src="image/book/kinhte/duong-den-thanh-cong-cua-jack-ma_50720_1.jpg" width="100"></td>
+										<td><input type="text" class="txtQuantity" data-id="36" value="1"></td>
+										<td>200.000đ</td>
+										<td>200.000đ</td>
+										<td><a href="#" class="btn btn-danger" data-id="36">Xóa</a></td>
+									</tr>
+									<tr>
+										<td>111</td>
+										<td>Đường đến thành công</td>
+										<td><img src="image/book/kinhte/duong-den-thanh-cong-cua-jack-ma_50720_1.jpg" width="100"></td>
+										<td><input type="text" class="txtQuantity" data-id="36" value="1"></td>
+										<td>200.000đ</td>
+										<td>200.000đ</td>
+										<td><a href="#" class="btn btn-danger" data-id="36">Xóa</a></td>
+									</tr>
+
+									<tr>
+										<td>222</td>
+										<td>Người Sài Gòn bất đắc dĩ</td>
+										<td><img src="image/book/vanhoc/nguoi-sai-gon-bat-dac-di_75172_1.jpg" width="100"></td>
+										<td><input type="text" class="txtQuantity" data-id="36" value="1"></td>
+										<td>115.000đ</td>
+										<td>115.000đ</td>
+										<td><a href="#" class="btn btn-danger" data-id="36">Xóa</a></td>
+									</tr>
+									<tr>
+										<td>222</td>
+										<td>Người Sài Gòn bất đắc dĩ</td>
+										<td><img src="image/book/vanhoc/nguoi-sai-gon-bat-dac-di_75172_1.jpg" width="100"></td>
+										<td><input type="text" class="txtQuantity" data-id="36" value="1"></td>
+										<td>115.000đ</td>
+										<td>115.000đ</td>
+										<td><a href="#" class="btn btn-danger" data-id="36">Xóa</a></td>
+									</tr>
+
+								</tbody>
+							</table>
+						</div>
+						<div class="col-md-5" style="border: 1px solid black;padding: 10px;">
+							<h2>Địa chỉ giao hàng </h2><hr>
+							<form action="/thanh-toan" method="post">                
+								<div class="form-group">
+									<label>Họ và tên người nhận</label>
+									<input name="shipName" class="form-control" placeholder="Nhập họ tên người nhận">
+								</div>
+								<div class="form-group">
+									<label>Điện thoại</label>
+									<input name="mobile" class="form-control" placeholder="Nhập số điện thoại">
+								</div>
+								<div class="form-group">
+									<label>Địa chỉ nhận hàng</label>
+									<input name="address" class="form-control" placeholder="Nhập địa chỉ nhận hàng">
+								</div>
+								<div class="form-group">
+									<label>Gửi tới email</label>
+									<input name="email" class="form-control" placeholder="Nhập email">
+								</div>
+								<button type="submit" class="btn">Gửi đơn hàng</button>
+							</form>        
+						</div>
+					</div>
+				</div>
+
+
+			</div>
+			<div>
+				<h3 style="font-size: 22px;font-family: 'ambleregular'">PHƯƠNG THỨC THANH TOÁN</h3> <hr>
+				<input type="checkbox" checked="true" name="">&nbsp&nbsp&nbsp
+				<img src="image/payment/payment.png">&nbsp&nbsp&nbsp<span>Chuyển khoản ngân hàng</span><br><br>
+				<input type="checkbox"  name="">&nbsp&nbsp&nbsp
+				<img src="image/payment/payment2.png">&nbsp&nbsp&nbsp<span>Thanh toán qua ví điện tử </span><br><br>
+				<input type="checkbox"  name="">&nbsp&nbsp&nbsp
+				<img src="image/payment/payment3.png">&nbsp&nbsp&nbsp<span>Thanh toán bằng tiền mặt khi nhận hàng </span>
+			</div><br><br>
+			<div class="form-group">
+				<h3 style="font-size: 22px;font-family: 'ambleregular'">MÃ KHUYẾN MÃI/MÃ QUÀ TẶNG</h3> <hr>
+				<div style="display: flex;">
+					<div><h2>Mã KM/Quà tặng</h2></div>
+					<div style="padding-left: 20px;" ><input type="textbox" name="" class="form-control"></div> &nbsp
+					<input type="button" name="" value="Áp dụng" class="btn btn-success">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="footer">
+	<div class="wrap">	
+		<div class="section group">
+			<div class="col_1_of_4 span_1_of_4">
+				<h4>Information</h4>
+				<ul>
+					<li><a href="about.html">About Us</a></li>
+					<li><a href="contact.html">Customer Service</a></li>
+					<li><a href="#">Advanced Search</a></li>
+					<li><a href="delivery.html">Orders and Returns</a></li>
+					<li><a href="contact.html">Contact Us</a></li>
+				</ul>
+			</div>
+			<div class="col_1_of_4 span_1_of_4">
+				<h4>Why buy from us</h4>
+				<ul>
+					<li><a href="about.html">About Us</a></li>
+					<li><a href="contact.html">Customer Service</a></li>
+					<li><a href="#">Privacy Policy</a></li>
+					<li><a href="contact.html">Site Map</a></li>
+					<li><a href="#">Search Terms</a></li>
+				</ul>
+			</div>
+			<div class="col_1_of_4 span_1_of_4">
+				<h4>My account</h4>
+				<ul>
+					<li><a href="contact.html">Sign In</a></li>
+					<li><a href="index.html">View Cart</a></li>
+					<li><a href="#">My Wishlist</a></li>
+					<li><a href="#">Track My Order</a></li>
+					<li><a href="contact.html">Help</a></li>
+				</ul>
+			</div>
+			<div class="col_1_of_4 span_1_of_4">
+				<h4>Contact</h4>
+				<ul>
+					<li><span>+91-123-456789</span></li>
+					<li><span>+00-123-000000</span></li>
+				</ul>
+				<div class="social-icons">
+					<h4>Follow Us</h4>
+					<ul>
+						<li><a href="#" target="_blank"><img src="images/facebook.png" alt="" /></a></li>
+						<li><a href="#" target="_blank"><img src="images/twitter.png" alt="" /></a></li>
+						<li><a href="#" target="_blank"><img src="images/skype.png" alt="" /> </a></li>
+						<li><a href="#" target="_blank"> <img src="images/dribbble.png" alt="" /></a></li>
+						<li><a href="#" target="_blank"> <img src="images/linkedin.png" alt="" /></a></li>
+						<div class="clear"></div>
+					</ul>
+				</div>
+			</div>
+		</div>			
+	</div>
+	<div class="copy_right">
+		<p>&copy; 2020 Book-Store.  | Design by CNTT1</a></p>
+	</div>
+</div>
+<script type="text/javascript">
+	$(document).ready(function() {			
+		$().UItoTop({ easingType: 'easeOutQuart' });
+
+	});
+</script>
+<a href="#" id="toTop"><span id="toTopHover"> </span></a>
+</body>
+</html>
+
